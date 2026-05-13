@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMT Medical: Advanced Wound Care Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Lato', sans-serif; background-color: #020617; color: #f8fafc; margin: 0; padding: 0; overflow: hidden; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+        
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+            position: relative;
+            scroll-snap-align: start;
+            border-bottom: 1px solid #1e293b;
+            overflow: hidden;
+            background: radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.05) 0%, transparent 40%);
+        }
+
+        .slide-container { 
+            scroll-snap-type: y mandatory; 
+            height: 100vh; 
+            overflow-y: scroll; 
+            scroll-behavior: smooth; 
+        }
+
+        .accent-border { border-left: 6px solid #38bdf8; padding-left: 1.5rem; }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .page-num { position: absolute; bottom: 1.5rem; right: 4rem; font-size: 0.875rem; color: #64748b; font-weight: bold; letter-spacing: 0.1em; }
+        
+        /* Specific Diagrams & Animations */
+        .ion-exchange { animation: swap 3s ease-in-out infinite alternate; }
+        @keyframes swap { 
+            0% { transform: translateY(0) scale(1); opacity: 1; } 
+            50% { opacity: 0.5; transform: scale(0.8); }
+            100% { transform: translateY(-40px) scale(1); opacity: 1; } 
+        }
+        
+        .exudate-flow { animation: flowUp 2.5s infinite linear; }
+        @keyframes flowUp { 0% { transform: translateY(20px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(-40px); opacity: 0; } }
+
+        .healing-pull { animation: pullTogether 4s ease-in-out infinite alternate; }
+        @keyframes pullTogether {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(15px); }
+        }
+        .healing-pull-reverse { animation: pullTogetherReverse 4s ease-in-out infinite alternate; }
+        @keyframes pullTogetherReverse {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-15px); }
+        }
+
+        /* Custom Scrollbar */
+        .slide-container::-webkit-scrollbar { width: 4px; }
+        .slide-container::-webkit-scrollbar-track { background: #020617; }
+        .slide-container::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+
+        .card { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid #1e293b; border-radius: 1rem; padding: 2rem; }
+    </style>
+</head>
+<body>
+
+<div class="slide-container" id="mainContainer">
+
+    <!-- Slide 1: Title -->
+    <section class="slide bg-slate-950">
+        <div class="text-center">
+            <h2 class="text-xl font-bold text-sky-500 uppercase tracking-[0.4em] mb-4">FOSHAN UNITED MEDICAL TECHNOLOGIES</h2>
+            <h1 class="text-7xl font-bold mb-6">UMT <span class="gradient-text">PORTFOLIO</span></h1>
+            <p class="text-2xl text-slate-400 max-w-3xl mx-auto">Advanced Wound Closure & Next-Generation Hydrofiber Dressings</p>
+            <div class="mt-12 h-1 w-32 bg-sky-500 mx-auto"></div>
+        </div>
+        <div class="page-num">01 / 09</div>
+    </section>
+
+    <!-- Slide 2: About UMT -->
+    <section class="slide">
+        <div class="w-full max-w-6xl grid grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-bold mb-6">World-Class <span class="text-sky-400">Expertise</span></h2>
+                <div class="card border-l-8 border-sky-500 mb-6">
+                    <p class="text-xl leading-relaxed text-slate-300">
+                        We combine specialized knowledge in advanced wound and skin care with world-class manufacturing capabilities.
+                    </p>
+                </div>
+                <ul class="space-y-4 text-lg">
+                    <li class="flex items-center gap-3 text-slate-300"><i class="fa-solid fa-globe text-sky-400"></i> Global B2B distribution of superior performance products.</li>
+                    <li class="flex items-center gap-3 text-slate-300"><i class="fa-solid fa-microscope text-sky-400"></i> Stringent R&D focusing on optimal healing environments.</li>
+                    <li class="flex items-center gap-3 text-slate-300"><i class="fa-solid fa-certificate text-sky-400"></i> Certified production standards ensuring clinical safety.</li>
+                </ul>
+            </div>
+            <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex justify-center items-center">
+                <i class="fa-solid fa-shield-halved text-9xl text-sky-900 opacity-50"></i>
+            </div>
+        </div>
+        <div class="page-num">02 / 09</div>
+    </section>
+
+    <!-- Slide 3: SequaHold Device -->
+    <section class="slide">
+        <div class="w-full max-w-6xl">
+            <h2 class="text-4xl font-bold mb-10 accent-border text-sky-400 uppercase">Wound Closure: SequaHold</h2>
+            <div class="grid grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-xl leading-relaxed mb-6">Designed for the non-invasive closure of acute wounds, SequaHold provides gentle, consistent pressure for superior aesthetic and clinical outcomes.</p>
+                    <ul class="space-y-6 text-lg">
+                        <li class="flex gap-4">
+                            <div class="h-8 w-8 rounded-full bg-sky-500 flex items-center justify-center text-slate-900 font-bold shrink-0"><i class="fa-solid fa-layer-group"></i></div>
+                            <p><strong>Structural Integrity:</strong> Features a durable polypropylene hasp coupled with medical-grade adhesive panels.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="h-8 w-8 rounded-full bg-sky-500 flex items-center justify-center text-slate-900 font-bold shrink-0"><i class="fa-solid fa-user-shield"></i></div>
+                            <p><strong>Trauma Reduction:</strong> Eliminates tissue puncturing associated with traditional sutures or staples.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 text-center">
+                    <h3 class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-8">Non-Invasive Approximation</h3>
+                    <svg viewBox="0 0 400 200" class="w-full mx-auto max-w-sm">
+                        <!-- Left skin flap -->
+                        <path d="M 50 100 Q 150 100 180 150 L 50 150 Z" fill="#475569" class="healing-pull" />
+                        <!-- Right skin flap -->
+                        <path d="M 350 100 Q 250 100 220 150 L 350 150 Z" fill="#475569" class="healing-pull-reverse" />
+                        <!-- SequaHold Hasp bridging them -->
+                        <rect x="150" y="80" width="100" height="20" rx="5" fill="#38bdf8" fill-opacity="0.8" />
+                        <line x1="170" y1="90" x2="230" y2="90" stroke="#0f172a" stroke-width="4" stroke-dasharray="5,5" />
+                        <text x="200" y="70" text-anchor="middle" fill="#38bdf8" font-size="12" font-weight="bold">SequaHold Tension</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="page-num">03 / 09</div>
+    </section>
+
+    <!-- Slide 4: Hydrofibers Overview -->
+    <section class="slide bg-slate-900">
+        <div class="text-center w-full max-w-6xl">
+            <h3 class="text-sky-300 tracking-widest uppercase mb-4">Core Technology</h3>
+            <h2 class="text-6xl font-bold uppercase mb-12">Hydrofiber Dressings</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div class="card border-t-4 border-sky-500 hover:border-sky-400 transition-all">
+                    <h3 class="text-2xl font-bold mb-4 text-sky-400">Alginates</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">Seaweed-derived fibers that perform a chemical ion exchange with wound exudate to form a protective, moist gel.</p>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Sorbsan &middot; SequaSorb</span>
+                </div>
+                <div class="card border-t-4 border-indigo-500 hover:border-indigo-400 transition-all">
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-400">CMC's</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">Carboxymethyl Cellulose fibers engineered for rapid, high-capacity vertical wicking of moderate to heavy exudate.</p>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">SequaCel</span>
+                </div>
+                <div class="card border-t-4 border-emerald-500 hover:border-emerald-400 transition-all">
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-400">Chitosan</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">100% Chitosan fibers that maintain high wet-integrity while facilitating autolytic debridement.</p>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Kytocel &middot; SequaSan</span>
+                </div>
+            </div>
+        </div>
+        <div class="page-num">04 / 09</div>
+    </section>
+
+    <!-- Slide 5: Alginate Mechanics -->
+    <section class="slide">
+        <h2 class="text-4xl font-bold mb-12 uppercase">Alginate: <span class="text-sky-400">Ion Exchange Mechanism</span></h2>
+        <div class="w-full max-w-5xl flex justify-around items-center">
+            <div class="w-1/2 pr-8">
+                <h3 class="text-2xl font-bold mb-4">Sorbsan & SequaSorb</h3>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">When applied to a wound, the sodium alginate fibers absorb wound fluid. A critical ionic exchange occurs:</p>
+                <div class="card bg-slate-900/80">
+                    <p class="text-sm text-slate-400 mb-2"><i class="fa-solid fa-arrow-right text-sky-500 mr-2"></i> Calcium ions (Ca++) are released into the wound bed.</p>
+                    <p class="text-sm text-slate-400 mb-2"><i class="fa-solid fa-arrow-left text-sky-500 mr-2"></i> Sodium ions (Na+) from the exudate are drawn into the fiber.</p>
+                    <p class="text-sm text-emerald-400 font-bold mt-4">Result: The dressing transforms into a soft, hydrophilic gel.</p>
+                </div>
+            </div>
+            <div class="w-1/2 flex justify-center text-center bg-slate-900 rounded-2xl p-8 border border-slate-800">
+                <svg width="200" height="200" viewBox="0 0 100 100">
+                    <!-- Fiber Matrix -->
+                    <rect x="20" y="10" width="60" height="30" rx="5" fill="#1e293b" stroke="#38bdf8" />
+                    <text x="50" y="30" text-anchor="middle" fill="#38bdf8" font-size="8" font-weight="bold">Alginate Fiber</text>
+                    
+                    <!-- Wound Bed -->
+                    <path d="M 10 90 Q 50 100 90 90 L 90 100 L 10 100 Z" fill="#475569" />
+                    <text x="50" y="85" text-anchor="middle" fill="#94a3b8" font-size="8">Wound Exudate</text>
+
+                    <!-- Ion Exchange Animation -->
+                    <g class="ion-exchange">
+                        <circle cx="40" cy="50" r="4" fill="#38bdf8" />
+                        <text x="40" y="52" text-anchor="middle" fill="#020617" font-size="4" font-weight="bold">Ca</text>
+                    </g>
+                    <g class="ion-exchange" style="animation-direction: alternate-reverse; animation-delay: 1.5s;">
+                        <circle cx="60" cy="50" r="4" fill="#ef4444" />
+                        <text x="60" y="52" text-anchor="middle" fill="#fff" font-size="4" font-weight="bold">Na</text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="page-num">05 / 09</div>
+    </section>
+
+    <!-- Slide 6: CMCs -->
+    <section class="slide">
+        <div class="w-full max-w-6xl">
+            <h2 class="text-4xl font-bold mb-10 accent-border uppercase text-indigo-400">SequaCel: Carboxymethyl Cellulose</h2>
+            <div class="grid grid-cols-2 gap-12 items-center">
+                <div class="flex items-center justify-center bg-slate-900 rounded-2xl p-12 border border-slate-800">
+                    <svg viewBox="0 0 200 150" width="300">
+                        <path d="M 20 130 L 180 130 L 180 150 L 20 150 Z" fill="#1e293b" />
+                        <text x="100" y="142" text-anchor="middle" fill="#64748b" font-size="8">HEAVY EXUDATE</text>
+                        <!-- Vertical Wicking Fibers -->
+                        <rect x="70" y="20" width="15" height="110" fill="#0f172a" stroke="#818cf8" rx="2"/>
+                        <rect x="90" y="20" width="15" height="110" fill="#0f172a" stroke="#818cf8" rx="2"/>
+                        <rect x="110" y="20" width="15" height="110" fill="#0f172a" stroke="#818cf8" rx="2"/>
+                        
+                        <!-- Fluid animation -->
+                        <g class="exudate-flow"><rect x="72" y="100" width="11" height="20" fill="#818cf8" opacity="0.6" rx="2"/></g>
+                        <g class="exudate-flow" style="animation-delay: 0.8s"><rect x="92" y="100" width="11" height="20" fill="#818cf8" opacity="0.6" rx="2"/></g>
+                        <g class="exudate-flow" style="animation-delay: 1.6s"><rect x="112" y="100" width="11" height="20" fill="#818cf8" opacity="0.6" rx="2"/></g>
+                    </svg>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 bg-slate-900 rounded-xl border-l-4 border-indigo-500">
+                        <h3 class="text-xl font-bold text-indigo-400 mb-2">Vertical Wicking Action</h3>
+                        <p class="text-slate-400 text-sm">SequaCel absorbs exudate strictly in a vertical direction. This locks fluid inside the dressing fibers rather than allowing lateral spread, preventing peri-wound maceration.</p>
+                    </div>
+                    <div class="p-6 bg-slate-900 rounded-xl border-l-4 border-indigo-500">
+                        <h3 class="text-xl font-bold text-indigo-400 mb-2">Structural Integrity</h3>
+                        <p class="text-slate-400 text-sm">Composed of a sterile soft nonwoven pad or ribbon that remains intact even when fully saturated, facilitating easy one-piece removal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-num">06 / 09</div>
+    </section>
+
+    <!-- Slide 7: Chitosan & Silver -->
+    <section class="slide">
+        <div class="w-full max-w-7xl">
+            <h2 class="text-4xl font-bold mb-10 accent-border uppercase">Chitosan & Antimicrobial Variants</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 bg-slate-900 rounded-2xl border border-slate-800">
+                    <h3 class="text-2xl font-bold mb-4 text-emerald-400"><i class="fa-solid fa-leaf mr-3"></i>Chitosan (Kytocel & SequaSan)</h3>
+                    <p class="text-slate-300 mb-6">Derived from 100% natural chitosan fibres, these highly conformable dressings are designed to manage moderate to highly exuding wounds.</p>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Facilitates autolytic debridement of necrotic tissue.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Coherent gel formation allows for intact, pain-free removal.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-500 mt-1"></i> Excellent wet-strength integrity.</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-slate-900 rounded-2xl border border-slate-800">
+                    <h3 class="text-2xl font-bold mb-4 text-slate-300"><i class="fa-solid fa-shield-virus mr-3"></i>Silver (Ag+) Formulations</h3>
+                    <p class="text-slate-300 mb-6">Available in formulations like <strong>Sorbsan Silver</strong> and <strong>SequaSorb Ag+</strong>.</p>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i> Proactive antimicrobial management.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i> Indicated for wounds presenting a high risk of localized infection.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-slate-500 mt-1"></i> Maintains the base hydrofiber moisture-retention properties.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-num">07 / 09</div>
+    </section>
+
+    <!-- Slide 8: Polyurethane & Probes -->
+    <section class="slide bg-slate-900">
+        <div class="w-full max-w-5xl">
+            <h2 class="text-4xl font-bold mb-10 text-center uppercase tracking-widest text-sky-400">Films, Foams & Diagnostics</h2>
+            <div class="card p-0 overflow-hidden">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-950">
+                        <tr>
+                            <th class="p-4 text-sky-400 font-bold uppercase text-xs text-left">Product Category</th>
+                            <th class="p-4 text-sky-400 font-bold uppercase text-xs text-left">UMT Devices</th>
+                            <th class="p-4 text-sky-400 font-bold uppercase text-xs text-left">Clinical Application</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-300 divide-y divide-slate-800">
+                        <tr>
+                            <td class="p-4 font-bold">Polyurethane Films</td>
+                            <td class="p-4 text-sky-300">SequaFilm</td>
+                            <td class="p-4">Transparent, semi-permeable secondary dressing for superficial coverage and water-resistant protection.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold">Polyurethane Foams</td>
+                            <td class="p-4 text-sky-300">SequaFoam</td>
+                            <td class="p-4">Cushioned, highly absorbent coverage for pressure offloading and exudate management.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold">Diagnostic Tools</td>
+                            <td class="p-4 text-sky-300">Sorbsan Wound Probe</td>
+                            <td class="p-4">ABS plastic stick with metric engravings for safe, precise wound depth measurement.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page-num">08 / 09</div>
+    </section>
+
+    <!-- Slide 9: Final Summary & Contact -->
+    <section class="slide bg-slate-950">
+        <div class="text-center">
+            <h1 class="text-6xl font-bold mb-8 gradient-text uppercase">Elevating Wound Care</h1>
+            <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed mb-16">
+                From precision non-invasive closure to dynamic, exudate-responsive hydrofibers, UMT delivers clinically proven solutions for modern tissue viability challenges.
+            </p>
+            <div class="card inline-block text-left p-12 border-sky-500/50 bg-slate-900/40">
+                <h4 class="text-xl font-bold text-white mb-6 uppercase tracking-widest">Iberia Operations & Support</h4>
+                <p class="text-3xl font-bold text-sky-400 mb-2">AndrÃ© Ferreira</p>
+                <p class="text-slate-400 font-bold text-sm mb-4 uppercase tracking-wider">Country Manager - Iberian Peninsula</p>
+                <p class="text-slate-400"><i class="fa-solid fa-link mr-2"></i> <a href="https://www.umtmedical.com/products" class="text-sky-400 hover:text-sky-300" target="_blank">UMT Official Product Line</a></p>
+            </div>
+        </div>
+        <div class="page-num">09 / 09</div>
+    </section>
+
+</div>
+
+<script>
+    const container = document.getElementById('mainContainer');
+    document.addEventListener('keydown', (e) => {
+        const slideHeight = window.innerHeight;
+        if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+            container.scrollBy({ top: slideHeight, behavior: 'smooth' });
+        }
+        if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+            container.scrollBy({ top: -slideHeight, behavior: 'smooth' });
+        }
+    });
+</script>
+
+</body>
+</html>
